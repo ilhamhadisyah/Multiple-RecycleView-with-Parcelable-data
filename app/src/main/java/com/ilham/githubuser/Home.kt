@@ -2,19 +2,15 @@ package com.ilham.githubuser
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.widget.ListView
 import androidx.recyclerview.widget.LinearLayoutManager
-import androidx.recyclerview.widget.RecyclerView
 import com.ilham.githubuser.databinding.ActivityHomeBinding
 
 class Home : AppCompatActivity() {
     private lateinit var binding: ActivityHomeBinding
     var userData = ArrayList<User>()
-
     companion object {
         const val USER_DATA = "User Data"
     }
-    private lateinit var listAdapter :topUserAdapter
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -22,8 +18,8 @@ class Home : AppCompatActivity() {
         setContentView(binding.root)
         userData = intent.getParcelableArrayListExtra<User>(USER_DATA) as ArrayList<User>
 
-        showTopUserList(userData)
-        showList(userData)
+        showTopUserList(UserSelection().topUserSelector(userData))
+        showList(UserSelection().userSelector(userData))
     }
 
     private fun showList(list: ArrayList<User>) {
@@ -32,8 +28,9 @@ class Home : AppCompatActivity() {
         binding.mainRv.adapter = itemAdapter
     }
 
-    private fun showTopUserList (list : ArrayList<User>){
-        binding.topUserRecycler.layoutManager = LinearLayoutManager(this,LinearLayoutManager.HORIZONTAL,false)
+    private fun showTopUserList(list: ArrayList<User>) {
+        binding.topUserRecycler.layoutManager =
+            LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false)
         val itemAdapter = topUserAdapter(list)
         binding.topUserRecycler.adapter = itemAdapter
     }

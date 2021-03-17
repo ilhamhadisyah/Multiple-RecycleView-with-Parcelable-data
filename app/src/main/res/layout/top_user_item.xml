@@ -28,9 +28,8 @@
         android:layout_gravity="center"
         android:layout_marginTop="-36dp"
         app:civ_border_color="@color/white"
-        android:src="@drawable/user10">
+        android:src="@drawable/user10"/>
 
-    </de.hdodenhof.circleimageview.CircleImageView>
     <TextView
         android:id="@+id/top_user_name"
         android:layout_width="wrap_content"
@@ -38,6 +37,7 @@
         android:layout_marginTop="10dp"
         android:text="@string/name_placeholder"
         android:textColor="@color/white"
+        android:textSize="15dp"
         android:layout_gravity="center"
         android:fontFamily="@font/open_sans_bold"/>
     <TextView
@@ -68,6 +68,7 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_marginLeft="5dp"
                 android:text="@string/Number"
                 android:id="@+id/top_user_repository"
                 android:textSize="8dp"/>
@@ -88,6 +89,7 @@
                 android:src="@drawable/ic_follower"/>
             <TextView
                 android:id="@+id/top_user_followers"
+                android:layout_marginLeft="5dp"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/Number"

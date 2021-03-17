@@ -15,4 +15,5 @@
     <color name="white_transparent">#23FFFFFF</color>
     <color name="transparent">#00000000</color>
     <color name="ocean_blue_transparent">#C43E73FC</color>
+    <color name="gold">#FFD500</color>
 </resources>
